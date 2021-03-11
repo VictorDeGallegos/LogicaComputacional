@@ -1,0 +1,2 @@
+# LogicaComputacional
+Practicas de laboratorio
