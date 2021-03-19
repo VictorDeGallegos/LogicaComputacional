@@ -1,3 +1,4 @@
+module Lista where
 data List a = Void | Cons a (List a) deriving (Show)
 
 
