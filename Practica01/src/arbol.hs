@@ -22,3 +22,15 @@ nni :: BTree a -> Int
 nni Void = 0
 nni (Node x Void Void) = 0
 nni (Node x ni nd) = 1 + nni ni + nni nd
+
+{-
+ - 4. Nos dice si un elemento está contenido en un árbol ordenado.
+ - -}
+ contains :: (Ord a, Eq a) => a -> BTree a -> Bool
+contains x Void = False
+contains x (Node a izquierda derecha)
+  | x == a = True
+  | x < a = contains x izquierda
+  | x > a = contains x derecha
+
+  
