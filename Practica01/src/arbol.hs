@@ -35,6 +35,13 @@ contains x (Node a izquierda derecha)
   | x > a = contains x derecha
 
   {-
+   - 5. Recorrido inorder.
+   - -}
+inorder :: BTree a -> [ a ]
+inorder Void = []
+inorder (Node x izquierda derecha) = inorder izquierda ++ (x : inorder derecha)
+
+  {-
    - 6. Recorrido preorder.
    - -}
 preorder :: BTree a -> [a]
