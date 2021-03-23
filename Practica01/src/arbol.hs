@@ -1,3 +1,4 @@
+
 module Arbol where
 data BTree a = Void | Node a (BTree a) (BTree a) deriving (Show, Eq)
 
@@ -56,5 +57,5 @@ postorder Void     = []
 postorder (Node x izquierda derecha) = postorder izquierda ++ postorder derecha ++ [x]
 
   {-
-  -8. Agrega un elemento a un árbol binario de manera ordenada
+  -8. Agrega un elemento a un aarbol binario de manera ordenada
   -}
