@@ -54,3 +54,7 @@ preorder (Node x izquierda derecha) = x : (preorder izquierda ++ preorder derech
 postorder :: BTree a -> [a]
 postorder Void     = []
 postorder (Node x izquierda derecha) = postorder izquierda ++ postorder derecha ++ [x]
+
+  {-
+  -8. Agrega un elemento a un árbol binario de manera ordenada
+  -}
