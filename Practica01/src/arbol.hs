@@ -57,5 +57,5 @@ postorder Void     = []
 postorder (Node x izquierda derecha) = postorder izquierda ++ postorder derecha ++ [x]
 
   {-
-  -8. Agrega un elemento a un aarbol binario de manera ordenada
+  -8. Agrega un elemento a un Arbol binario de manera ordenada
   -}
