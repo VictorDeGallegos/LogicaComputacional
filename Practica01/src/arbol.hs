@@ -65,3 +65,28 @@ add x (Node a left right)
     | x == a = Node x left right
     | x < a  = Node a (add x left) right
     | x > a  = Node a left (add x right)
+{-
+- ATENCION myfilter ES UNA FUNCION AUXILIAR
+- myfilter es la version recursiva de filter
+- myfilter p xs es la lista de los elementos de xs que cumplen la propiedad p.
+-}
+myfilter :: (a -> Bool) -> [a] -> [a]
+myfilter _ []= []
+myfilter p (x:xs) | p x = x : myfilter p xs
+                  | otherwise = myfilter p xs
+
+{-
+- 9.Pasa una lista a un árbol binario de forma ordenada
+- La lista (x:xs) es convertida en arbol y la raiz es x.
+- En el caso de ser vacia la lista, el arbol es Void, en otras palabras vacio.
+-
+- En el caso de no ser vacio:
+- El sub-árbol de la izquierda es un árbol creado de la siguiente manera:
+- xs tienen que ser menores a x.
+- El sub-árbol de la derecha es el árbol esta formado por los elementos
+- mayores a x.
+-}
+fromList :: ( Ord a ) => [ a ] -> BTree a
+fromList [] = Void
+fromList (x:xs) = Node x (fromList (myfilter (<x) xs))
+                         (fromList (myfilter (>x) xs))
