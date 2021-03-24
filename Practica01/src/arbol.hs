@@ -59,9 +59,9 @@ postorder (Node x izquierda derecha) = postorder izquierda ++ postorder derecha 
   {-
   -8. Agrega un elemento a un Arbol binario de manera ordenada
   -}
-add :: (Ord a) => BTree a -> a -> BTree a
-add Void x = Node Void x Void
-add (Node t1 v t2) x
-	| v == x = Node t1 v t2
-	| v  < x = Node t1 v (add t2 x)
-	| v  > x = Node (add t1 x) v t2
+add :: (Ord a) => a -> BTree a -> BTree a
+add x Void =   Node x Void Void
+add x (Node a left right)
+    | x == a = Node x left right
+    | x < a  = Node a (add x left) right
+    | x > a  = Node a left (add x right)
