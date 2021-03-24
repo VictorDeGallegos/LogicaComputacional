@@ -1,7 +1,7 @@
 # LogicaComputacional
 Practicas de laboratorio
 
-#Contribuidores
+# Contribuidores
 
 • CarlosCruzRangel
 • VictorDeGallegos
